@@ -42,6 +42,7 @@ def make_graphs():
     grapher.plot_temp_data()
     grapher.plot_light_data()
     grapher.plot_humid_data()
+    return "graphs made"
     
 
 if __name__ == '__main__':

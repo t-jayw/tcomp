@@ -23,20 +23,22 @@ class SensorGrapher():
         self.timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     def fetch_df(self):
-        cur.execute(sensor_query)
-        data = cur.fetchall()
+        self.cur.execute(self.query)
+        data = self.cur.fetchall()
         df = pd.DataFrame(np.array(data))
-        df.columns = ['time_stamp', 'temp', 'humid', 'light', 'top_soil', 'mid_soil', 'tray']
-        df['time_stamp'] = pd.to_datetime(df.time_stamp)
-        df = df.set_index('time_stamp')
-        self.df = df[df.time_stamp >= (datetime.now()-timedelta(days=14))]
+        df.columns = ['timestamp', 'temp', 'humid', 'light', 'top_soil', 'mid_soil', 'tray']
+        df['timestamp'] = pd.to_datetime(df.timestamp)
+        df = df[df.timestamp >= (datetime.now()-timedelta(days=14))]
+        df = df.set_index('timestamp')
+        self.df = df
+
 
     def plot_moisture_data(self):
         moist_df = self.df[['tray','top_soil', 'mid_soil']]
-        moist_df = moist_df[['top_soil', 'mid_soil', 'tray']].mask(df < 350)
+        moist_df = moist_df[['top_soil', 'mid_soil', 'tray']].mask(moist_df < 350)
         fig, axs = plt.subplots(1, 1, figsize=(15,5))
         axs.plot(moist_df.index, ((moist_df[['top_soil', 'mid_soil', 'tray']]/(-1024))+1))
-        axs.set_title('Moisture Sensors\n timestamp: '+timestamp)
+        axs.set_title('Moisture Sensors\n timestamp: '+ self.timestamp)
         axs.set_ylabel('Soil Moisture Readings \n 1 is completely soaked')
         axs.legend(moist_df.columns)
         axs.grid(True)
@@ -46,7 +48,7 @@ class SensorGrapher():
         pdf = self.df[['temp']]
         fig, axs = plt.subplots(1, 1, figsize=(15,5))
         axs.plot(pdf, color='red')
-        axs.set_title('Temperature (F)\n UTC timestamp: '+timestamp)
+        axs.set_title('Temperature (F)\n UTC timestamp: '+ self.timestamp)
         axs.set_ylabel('Temp in Degrees F')
         axs.legend(pdf.columns)
         axs.grid(True)
@@ -56,7 +58,7 @@ class SensorGrapher():
         pdf = self.df[['humid']]
         fig, axs = plt.subplots(1, 1, figsize=(15,5))
         axs.plot(pdf, color='lightblue')
-        axs.set_title('Humidity\n UTC timestamp: '+timestamp)
+        axs.set_title('Humidity\n UTC timestamp: '+ self.timestamp)
         axs.set_ylabel('Rel. Humidity (%)')
         axs.legend(pdf.columns)
         axs.grid(True)
@@ -66,7 +68,7 @@ class SensorGrapher():
         pdf = self.df[['light']]
         fig, axs = plt.subplots(1, 1, figsize=(15,5))
         axs.plot(pdf, color='orange')
-        axs.set_title('Sunlight\n UTC timestamp: '+timestamp)
+        axs.set_title('Sunlight\n UTC timestamp: '+ self.timestamp)
         axs.set_ylabel('Reading from LDR, unsure of unit')
         axs.legend(pdf.columns)
         axs.grid(True)
