@@ -5,7 +5,7 @@ import numpy as np
 import math
 
 from datetime import datetime, timedelta
-from secrets import db_connect
+from db_connect import db_connect
 
 
 class SensorGrapher():
