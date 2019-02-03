@@ -7,8 +7,9 @@ app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+secret_endpoint = os.environ['secret_endpoint']
+
 from models import *
-from secrets import secret_endpoint
 from graphs import SensorGrapher
 
 def root_dir():  # pragma: no cover
@@ -33,7 +34,7 @@ def hello():
 
 
 
-@app.route(secret_endpoint)
+@app.route('/'+secret_endpoint)
 def make_graphs():
     grapher = SensorGrapher()
     grapher.fetch_df()
