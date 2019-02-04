@@ -32,6 +32,10 @@ def hello():
     path = os.path.join(root_dir(), 'templates/index.html')
     return render_template('index.html')
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return 'uh oh you have found a 404', 404
+
 @app.route('/'+secret_endpoint)
 def make_graphs():
     grapher = SensorGrapher()
