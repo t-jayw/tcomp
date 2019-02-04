@@ -17,6 +17,7 @@ def db_connect():
     conn.autocommit = True
   except:
     print("Unable to connect to the database")
+    return 'nada'
 
   cur = conn.cursor(cursor_factory=DictCursor)
   return cur

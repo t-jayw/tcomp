@@ -32,8 +32,6 @@ def hello():
     path = os.path.join(root_dir(), 'templates/index.html')
     return render_template('index.html')
 
-
-
 @app.route('/'+secret_endpoint)
 def make_graphs():
     grapher = SensorGrapher()
