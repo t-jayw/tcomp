@@ -66,7 +66,7 @@ class SensorGrapher():
         plt.savefig('static/humid.png')
 
     def plot_light_data(self):
-        pdf = self.df[['light']]
+        pdf = self.df[['light']].rolling(window=6).mean()
         fig, axs = plt.subplots(1, 1, figsize=(15,3))
         axs.plot(pdf, color='orange')
         axs.set_title('Sunlight - UTC timestamp: '+ self.timestamp)
