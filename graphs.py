@@ -34,7 +34,8 @@ class SensorGrapher():
 
 
     def plot_moisture_data(self):
-        moist_df = self.df[['tray','top_soil', 'mid_soil']]
+        moist_df = self.df[['tray','top_soil','mid_soil']
+                          ].rolling(window=12).mean()
         moist_df = moist_df[['top_soil', 'mid_soil', 'tray']].mask(moist_df < 350)
         fig, axs = plt.subplots(1, 1, figsize=(15,4))
         axs.plot(moist_df.index, ((moist_df[['top_soil', 'mid_soil', 'tray']]/(-1024))+1))
