@@ -46,9 +46,9 @@ class SensorGrapher():
 
     def plot_temp_data(self):
         pdf = self.df[['temp']]
-        fig, axs = plt.subplots(1, 1, figsize=(15,3))
+        fig, axs = plt.subplots(1, 1, figsize=(15,4))
         axs.plot(pdf, color='red')
-        axs.set_title('Temperature (F)\n UTC timestamp: '+ self.timestamp)
+        axs.set_title('Temperature (F) - UTC timestamp: '+ self.timestamp)
         axs.set_ylabel('Temp in Degrees F')
         axs.legend(pdf.columns)
         axs.grid(True)
@@ -56,9 +56,9 @@ class SensorGrapher():
 
     def plot_humid_data(self):
         pdf = self.df[['humid']]
-        fig, axs = plt.subplots(1, 1, figsize=(15,3))
+        fig, axs = plt.subplots(1, 1, figsize=(15,4))
         axs.plot(pdf, color='lightblue')
-        axs.set_title('Humidity\n UTC timestamp: '+ self.timestamp)
+        axs.set_title('Humidity - UTC timestamp: '+ self.timestamp)
         axs.set_ylabel('Rel. Humidity (%)')
         axs.legend(pdf.columns)
         axs.grid(True)
@@ -66,9 +66,9 @@ class SensorGrapher():
 
     def plot_light_data(self):
         pdf = self.df[['light']]
-        fig, axs = plt.subplots(1, 1, figsize=(15,3))
+        fig, axs = plt.subplots(1, 1, figsize=(15,4))
         axs.plot(pdf, color='orange')
-        axs.set_title('Sunlight\n UTC timestamp: '+ self.timestamp)
+        axs.set_title('Sunlight - UTC timestamp: '+ self.timestamp)
         axs.set_ylabel('Reading from LDR, unsure of unit')
         axs.legend(pdf.columns)
         axs.grid(True)
