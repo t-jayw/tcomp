@@ -43,7 +43,7 @@ class SensorGrapher():
         axs.set_ylabel('Soil Moisture Readings \n 1 is completely soaked')
         axs.legend(moist_df.columns)
         axs.grid(True)
-        plt.savefig('static/moisture.png', bbox_inches='tight')
+        plt.savefig('static/moisture.png')
 
     def plot_temp_data(self):
         pdf = self.df[['temp']].rolling(window=24).mean()
@@ -53,7 +53,7 @@ class SensorGrapher():
         axs.set_ylabel('Temp in Degrees F')
         axs.legend(pdf.columns)
         axs.grid(True)
-        plt.savefig('static/temp.png', bbox_inches='tight')
+        plt.savefig('static/temp.png')
 
     def plot_humid_data(self):
         pdf = self.df[['humid']].rolling(window=72).mean()
@@ -63,7 +63,7 @@ class SensorGrapher():
         axs.set_ylabel('Rel. Humidity (%)')
         axs.legend(pdf.columns)
         axs.grid(True)
-        plt.savefig('static/humid.png', bbox_inches='tight')
+        plt.savefig('static/humid.png' )
 
     def plot_light_data(self):
         pdf = self.df[['light']].rolling(window=36).mean()
@@ -73,7 +73,7 @@ class SensorGrapher():
         axs.set_ylabel('Reading from LDR, unsure of unit')
         axs.legend(pdf.columns)
         axs.grid(True)
-        plt.savefig('static/light.png', bbox_inches='tight')
+        plt.savefig('static/light.png') 
 
 if __name__ == "__main__":
     grapher = SensorGrapher()
