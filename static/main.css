@@ -9,6 +9,7 @@
 .graph_img {
   width: 67%;
   height: auto;
+  padding-left: 40px;
   margin-left: auto;
   margin-right: auto;
 }
