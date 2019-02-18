@@ -53,12 +53,14 @@ def check_for_existing_comment():
 	print(result)
 	return result
 
+print(thread_id)
+
 def update_comment():
 	yes, no = make_bars(YES, NO)
 	continuous_score_body = continuous_vote_display%(yes, no)
 	
 	comment_id = check_for_existing_comment()
-	
+	print(comment_id)
 	if comment_id:
 		update = r.comment(comment_id)
 		print(update)
@@ -73,4 +75,5 @@ def update_comment():
 
 
 if __name__ == '__main__':
+  print('running continuous tally comment')
   update_comment()
