@@ -41,7 +41,7 @@ class ThreadVoteCounter():
       return 0
 
   def pull_comments(self):
-    comments = self.thread.comments.list()
+    comments = self.thread.comments
     return comments
 
   def process_thread(self):
