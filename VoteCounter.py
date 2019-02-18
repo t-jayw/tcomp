@@ -74,7 +74,6 @@ class ThreadVoteCounter():
 
     for c in self.processed_comments:
       print('writing: '+str(c))
-      print(SQL)
       try:
         self.cur.execute(SQL, c)
       except IntegrityError:
