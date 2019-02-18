@@ -11,7 +11,6 @@ def db_connect():
   db_password =  os.environ['aws_db_password']
 
   conn_string = "dbname='" + str(db_name) + "' user='" + str(db_user) + "' host='" + str(db_host) + "' password='" + str(db_password) + "'"
-  print(conn_string)
   try:
     conn = psycopg2.connect(str(conn_string))
     conn.autocommit = True
