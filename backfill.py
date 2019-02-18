@@ -11,7 +11,7 @@ results = cur.fetchall()
 
 for result in results:
     thread = result[0]
-    vc = ThreadVoteCounter(thread)
+    vc = ThreadVoteCounter(r, cur, thread)
     vc.process_thread()
     vc.write_votes()
 
