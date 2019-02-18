@@ -3,7 +3,7 @@ import re
 from psycopg2 import IntegrityError
 from datetime import datetime
 from db_connect import db_connect
-import reddit_config as c 
+import reddit_config as c
 
 
 class ThreadVoteCounter():
@@ -21,10 +21,11 @@ class ThreadVoteCounter():
 
   def get_last_water_thread_id(self):
     cur = self.cur
-    cur.execute('''SELECT post_id FROM water_thread_id 
+    cur.execute('''SELECT post_id FROM water_thread_id
                 ORDER BY time_stamp DESC
                 LIMIT 1''')
     thread_id = cur.fetchall()
+    print(thread_id)
     return thread_id[0][0]
 
   def count_comment_vote(self, Comment):
@@ -49,7 +50,7 @@ class ThreadVoteCounter():
     comments = self.pull_comments()
     output = []
     for c in comments:
-      output.append((self.thread_id, c.id, c.author.name, 
+      output.append((self.thread_id, c.id, c.author.name,
                     c.body, self.count_comment_vote(c), self.timestamp))
 
     self.processed_comments = output
@@ -70,10 +71,11 @@ class ThreadVoteCounter():
       = (EXCLUDED.thread_id, EXCLUDED.comment_id, EXCLUDED.comment_author,
          EXCLUDED.comment_text, EXCLUDED.comment_vote, EXCLUDED.count_timestamp)
       """
-    
+
     for c in self.processed_comments:
       print('writing: '+str(c))
       try:
+        print(SQL%data)
         self.cur.execute(SQL, c)
       except IntegrityError:
         continue
