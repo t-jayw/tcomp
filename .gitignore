@@ -2,3 +2,4 @@ secrets.py
 .env
 .swp
 *.ipynb
+*.pyc
