@@ -15,8 +15,8 @@ class ThreadVoteCounter():
     else:
       self.thread_id = thread_id
     self.thread = self.Reddit.submission(id = self.thread_id)
-    self.yes_regex = 'yes|aye|prost'
-    self.no_regex = 'no|not on your nelly|nein'
+    self.yes_regex = 'yes|aye|prost|ja'
+    self.no_regex = 'no|not on your nelly|nein|nei'
     self.timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:00")
 
   def get_last_water_thread_id(self):
