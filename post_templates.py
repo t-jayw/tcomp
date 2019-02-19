@@ -35,7 +35,7 @@ description = r.json()['weather'][0]['main']
 
 # Daily Water Thread
 title = """
-Today is {0}, {1} {2}. Do you want to water the plant today? 
+Today is {0}, {1} {2}. Do you want to water Freyja the plant today? 
 """
 
 title = title.format(now_pst.strftime('%A'),
@@ -45,18 +45,20 @@ title = title.format(now_pst.strftime('%A'),
 #history = hf.history_table
 
 body = """
-Hello, and welcome back!
+Hello, and welcome back! Thanks for taking care of my plant.
 
-It is **{0}** in Colorado and the weather report today calls for: *{1}*.
+It is **{0}** in Boulder today, and the weather report today calls for: *{1}*.
 
-Please vote for whether or not you think our new plant should be watered today.
+Please vote in a comment below whether or not you think Freyja should be watered
+today.
 
-To vote for **water** please comment `yes`, `aye`, or `prost` on this post.
+To vote for **water** please comment `yes`, `aye`, `prost`, or 'ja' on this post.
 
-To vote for **no water today** please comment `no`, `nein`,  `not on your nelly` on this post.
+To vote for **no water today** please comment `no`, `not on your nelly`, or
+'nei' on this post.
 
-This post will stay up for 23 hours and then it, and all votes,  post will be locked.
-u/takecareofmyplant will tally all the **water** or **no water** votes in top level comments
+This post will stay up for 24 hours. Before the new post tomorrow, this thread
+will be locked and then u/takecareofmyplant will tally all the **water** or **no water** votes in top level comments
 on this thread. 
 
 If **water** is the majority, u/takecareofmyplant will turn on the
@@ -69,9 +71,16 @@ pump and water the plant. If not, we will check in again tomorrow!
 
 ****
 
-Check out the [PLANT CAM](http://www.takecareofmyplant.com) to help guide your decision! 
+Check in on Freyja with the [PLANT CAM](http://www.takecareofmyplant.com) to help guide your decision!
+On that site you will also find sensor data to learn about Freyja's environment,
+such as the moisture of her soil, the sunlight, the temperature and humidity in
+her room.
 
 Show your support for sensible watering policy by purchasing a [JEFF PIN!](https://www.etsy.com/listing/487532734/not-on-your-nelly-enamel-pin?ref=shop_home_active_1)
+
+Please also follow us on Instagram for even more plant content and behind the
+scenes looks at how this project is made!
+[@takecareofmyplant](https://www.instagram.com/takecareofmyplant)
 """
 
 body = body.format(now_formatted, description, end_time_formatted, 'this section under construction')
