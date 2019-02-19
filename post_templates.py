@@ -67,10 +67,6 @@ pump and water the plant. If not, we will check in again tomorrow!
 
 **To help take care of the plant, please vote below!**
 
-****
-
-****
-
 Check in on Freyja with the [PLANT CAM](http://www.takecareofmyplant.com) to help guide your decision!
 On that site you will also find sensor data to learn about Freyja's environment,
 such as the moisture of her soil, the sunlight, the temperature and humidity in
@@ -81,6 +77,19 @@ Show your support for sensible watering policy by purchasing a [JEFF PIN!](https
 Please also follow us on Instagram for even more plant content and behind the
 scenes looks at how this project is made!
 [@takecareofmyplant](https://www.instagram.com/takecareofmyplant)
+
+****
+>>Results from past 7 days
+
+* %s
+* %s 
+* %s
+* %s
+* %s
+* %s
+
+****
+
 """
 
 body = body.format(now_formatted, description, end_time_formatted, 'this section under construction')
