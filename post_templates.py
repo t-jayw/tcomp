@@ -52,10 +52,10 @@ It is **{0}** in Boulder today, and the weather report today calls for: *{1}*.
 Please vote in a comment below whether or not you think Freyja should be watered
 today.
 
-To vote for **water** please comment `yes`, `aye`, `prost`, or 'ja' on this post.
+To vote for **water** please comment `yes`, `aye`, `prost`, or `ja` on this post.
 
 To vote for **no water today** please comment `no`, `not on your nelly`, or
-'nei' on this post.
+`nei` on this post.
 
 This post will stay up for 24 hours. Before the new post tomorrow, this thread
 will be locked and then u/takecareofmyplant will tally all the **water** or **no water** votes in top level comments
