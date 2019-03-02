@@ -46,7 +46,7 @@ FROM past_seven_votes
 JOIN past_seven ON thread_id = post_id
 ORDER BY post_date DESC
 """
-url_string = 'https://www.reddit.com/r/takecareofmyplant.com/comments/%s'
+url_string = 'https://www.reddit.com/r/takecareofmyplant/comments/%s'
 post_string = '[%s](%s): %s'
 
 cur.execute(history_sql)

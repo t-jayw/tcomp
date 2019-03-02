@@ -55,11 +55,9 @@ today.
 To vote for **water** please comment `yes`, `aye`, `prost`, or `ja` on this post.
 
 To vote for **no water today** please comment `no`, `not on your nelly`,
-'nein', or `nei` on this post.
+`nein`, or `nei` on this post.
 
-This post will stay up for 24 hours. Before the new post tomorrow, this thread
-will be locked and then u/takecareofmyplant will tally all the **water** or **no water** votes in top level comments
-on this thread. 
+This post will stay up for 24 hours and then votes will be tallied.
 
 If **water** is the majority, u/takecareofmyplant will turn on the
 pump and water the plant. If not, we will check in again tomorrow!
@@ -67,14 +65,19 @@ pump and water the plant. If not, we will check in again tomorrow!
 
 **To help take care of the plant, please vote below!**
 
-Check in on Freyja with the [PLANT CAM](http://www.takecareofmyplant.com) to help guide your decision!
-On that site you will also find sensor data to learn about Freyja's environment,
-such as the moisture of her soil, the sunlight, the temperature and humidity in
-her room.
+Check our website [TAKECAREOFMYPLANT](http://www.takecoareofmyplant.com) where
+you will find
 
-Show your support for sensible watering policy by purchasing a [JEFF PIN!](https://www.etsy.com/listing/487532734/not-on-your-nelly-enamel-pin?ref=shop_home_active_1)
+* A livestream of Freyja
+* Sensor data displaying Freyja's soil moisture, sunlight exposure and other metrics!
 
-Please also follow us on Instagram for even more plant content and behind the
+****
+
+Check out our
+[PINS!](https://www.etsy.com/listing/487532734/not-on-your-nelly-enamel-pin?ref=shop_home_active_1)
+for sale on Etsy!
+
+Follow us on Instagram for even more plant content and behind the
 scenes looks at how this project is made!
 [@takecareofmyplant](https://www.instagram.com/takecareofmyplant)
 
