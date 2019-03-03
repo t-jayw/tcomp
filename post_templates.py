@@ -65,7 +65,7 @@ pump and water the plant. If not, we will check in again tomorrow!
 
 **To help take care of the plant, please vote below!**
 
-Check our website [TAKECAREOFMYPLANT](http://www.takecoareofmyplant.com) where
+Check our website [TAKECAREOFMYPLANT](http://www.takecareofmyplant.com) where
 you will find
 
 * A livestream of Freyja
