@@ -3,3 +3,4 @@ secrets.py
 .swp
 *.ipynb
 *.pyc
+*.aws/*
