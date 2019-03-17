@@ -99,12 +99,7 @@ if __name__ == "__main__":
     for x in graphs:
       graph = base+x
       s3_bucket.upload_file(graph, x, ExtraArgs={'ACL':'public-read',
-                                            "Metadata":{'ContentType':'image'}})
+                                                'ContentType':'image/png'})
       print('writing {} to s3'.format(graph))
 
     
-
-
-
-
-
