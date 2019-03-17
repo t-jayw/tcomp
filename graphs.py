@@ -3,6 +3,8 @@ import time
 import pandas as pd
 import numpy as np
 import math
+import boto3
+import os
 
 from datetime import datetime, timedelta
 from db_connect import db_connect
@@ -75,6 +77,7 @@ class SensorGrapher():
         axs.grid(True)
         plt.savefig('static/light.png') 
 
+
 if __name__ == "__main__":
     grapher = SensorGrapher()
     grapher.fetch_df()
@@ -82,4 +85,25 @@ if __name__ == "__main__":
     grapher.plot_temp_data()
     grapher.plot_light_data()
     grapher.plot_humid_data()    
+
+    ## Push to s3
+    session = boto3.Session(
+                  aws_access_key_id=os.environ['s3_access_key_id'],
+                  aws_secret_access_key=os.environ['s3_secret_access_key'])
+    s3_resource = session.resource('s3')
+    s3_bucket = s3_resource.Bucket(name='plant-graphs')
+   
+    graphs = ['moisture.png', 'temp.png', 'humid.png', 'light.png']
+    base = 'static/'
     
+    for x in graphs:
+      graph = base+x
+      s3_bucket.upload_file(graph, x, ExtraArgs={'ACL':'public-read'})
+      print('writing {} to s3'.format(graph))
+
+    
+
+
+
+
+
