@@ -37,7 +37,7 @@ class SensorGrapher():
 
     def plot_moisture_data(self):
         moist_df = self.df[['tray','top_soil','mid_soil']
-                          ].rolling(window=12).mean()
+                          ].rolling(window=10).mean()
         moist_df = moist_df[['top_soil', 'mid_soil', 'tray']].mask(moist_df < 350)
         fig, axs = plt.subplots(1, 1, figsize=(15,4))
         axs.plot(moist_df.index, ((moist_df[['top_soil', 'mid_soil', 'tray']]/(-1024))+1))
@@ -48,7 +48,7 @@ class SensorGrapher():
         plt.savefig('static/moisture.png')
 
     def plot_temp_data(self):
-        pdf = self.df[['temp']].rolling(window=24).mean()
+        pdf = self.df[['temp']].rolling(window=18).mean()
         fig, axs = plt.subplots(1, 1, figsize=(15,3))
         axs.plot(pdf, color='red')
         axs.set_title('Temperature (F) - UTC timestamp: '+ self.timestamp)
@@ -58,7 +58,7 @@ class SensorGrapher():
         plt.savefig('static/temp.png')
 
     def plot_humid_data(self):
-        pdf = self.df[['humid']].rolling(window=72).mean()
+        pdf = self.df[['humid']].rolling(window=48).mean()
         fig, axs = plt.subplots(1, 1, figsize=(15,3))
         axs.plot(pdf, color='lightblue')
         axs.set_title('Humidity - UTC timestamp: '+ self.timestamp)
@@ -68,7 +68,7 @@ class SensorGrapher():
         plt.savefig('static/humid.png' )
 
     def plot_light_data(self):
-        pdf = self.df[['light']].rolling(window=36).mean()
+        pdf = self.df[['light']].rolling(window=28).mean()
         fig, axs = plt.subplots(1, 1, figsize=(15,3))
         axs.plot(pdf, color='orange')
         axs.set_title('Sunlight - UTC timestamp: '+ self.timestamp)
